@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface AppStoreUpdateAppObject : NSObject
 
 @property(strong,nonatomic,readwrite)   NSString    *appName;
@@ -24,5 +22,3 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL)isNewVersionAvailable;
 
 @end
-
-NS_ASSUME_NONNULL_END

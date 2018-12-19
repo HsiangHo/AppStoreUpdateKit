@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		984AC0A721CA8F260082B0BE /* AppStoreUpdateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98DF3DA621C9FD3C008515B7 /* AppStoreUpdateKit.framework */; };
 		98DF3DAB21C9FD3C008515B7 /* AppStoreUpdateKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DF3DA921C9FD3C008515B7 /* AppStoreUpdateKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98DF3DB321C9FEFB008515B7 /* AppStoreUpdateWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DF3DB121C9FEFB008515B7 /* AppStoreUpdateWindowController.h */; };
 		98DF3DB421C9FEFB008515B7 /* AppStoreUpdateWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DF3DB221C9FEFB008515B7 /* AppStoreUpdateWindowController.m */; };
@@ -14,9 +15,9 @@
 		98DF3DBF21C9FF22008515B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98DF3DBE21C9FF22008515B7 /* Assets.xcassets */; };
 		98DF3DC221C9FF22008515B7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98DF3DC021C9FF22008515B7 /* MainMenu.xib */; };
 		98DF3DC521C9FF22008515B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DF3DC421C9FF22008515B7 /* main.m */; };
-		98DF3DD021CA0108008515B7 /* AppStoreUpdateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DF3DCE21CA0108008515B7 /* AppStoreUpdateManager.h */; };
+		98DF3DD021CA0108008515B7 /* AppStoreUpdateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DF3DCE21CA0108008515B7 /* AppStoreUpdateManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98DF3DD121CA0108008515B7 /* AppStoreUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DF3DCF21CA0108008515B7 /* AppStoreUpdateManager.m */; };
-		98DF3DD421CA0D3C008515B7 /* AppStoreUpdateAppObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DF3DD221CA0D3B008515B7 /* AppStoreUpdateAppObject.h */; };
+		98DF3DD421CA0D3C008515B7 /* AppStoreUpdateAppObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DF3DD221CA0D3B008515B7 /* AppStoreUpdateAppObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98DF3DD521CA0D3C008515B7 /* AppStoreUpdateAppObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DF3DD321CA0D3C008515B7 /* AppStoreUpdateAppObject.m */; };
 /* End PBXBuildFile section */
 
@@ -52,18 +53,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984AC0A721CA8F260082B0BE /* AppStoreUpdateKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		984AC0A621CA8F260082B0BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		98DF3D9C21C9FD3C008515B7 = {
 			isa = PBXGroup;
 			children = (
 				98DF3DA821C9FD3C008515B7 /* AppStoreUpdateKit */,
 				98DF3DBA21C9FF1B008515B7 /* AppStoreUpdateKitDemo */,
 				98DF3DA721C9FD3C008515B7 /* Products */,
+				984AC0A621CA8F260082B0BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,6 +396,7 @@
 				INFOPLIST_FILE = AppStoreUpdateKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HyperartFlow.AppStoreUpdateKit;
@@ -410,6 +421,7 @@
 				INFOPLIST_FILE = AppStoreUpdateKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HyperartFlow.AppStoreUpdateKit;

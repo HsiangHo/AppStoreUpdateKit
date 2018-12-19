@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import <AppStoreUpdateKit/AppStoreUpdateManager.h>
+#import <AppStoreUpdateKit/AppStoreUpdateAppObject.h>
 //! Project version number for AppStoreUpdateKit.
 FOUNDATION_EXPORT double AppStoreUpdateKitVersionNumber;
 

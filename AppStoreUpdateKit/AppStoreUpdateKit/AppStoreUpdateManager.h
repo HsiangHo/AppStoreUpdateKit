@@ -24,8 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 /*
  These functions will request app information from app store. Return value YES: New version is available.
  */
--(BOOL)checkAppUpdate:(AppStoreUpdateAppObject *)AppObj;
--(void)checkAppUpdateAsync:(AppStoreUpdateAppObject *)AppObj withCompletionBlock:(void (^)(BOOL rslt, AppStoreUpdateAppObject *AppObj))block;
+-(BOOL)checkAppUpdate:(AppStoreUpdateAppObject *)appObj;
+-(void)checkAppUpdateAsync:(AppStoreUpdateAppObject *)appObj withCompletionBlock:(void (^)(BOOL rslt, AppStoreUpdateAppObject *AppObj))block;
 
 /*
  If new version is available, this method will show the updateWindow and return YES, No new version will return NO.
