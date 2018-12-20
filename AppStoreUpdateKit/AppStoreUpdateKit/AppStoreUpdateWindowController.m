@@ -139,20 +139,26 @@
 
 -(IBAction)updateButton_click:(id)sender{
     if ([_delegate respondsToSelector:@selector(updateButtonClick:)]) {
-        [_delegate updateButtonClick:sender];
+        [_delegate updateButtonClick:self];
     }
+    [self.window orderOut:nil];
+    [self close];
 }
 
 -(IBAction)skipButton_click:(id)sender{
     if ([_delegate respondsToSelector:@selector(skipButtonClick:)]) {
-        [_delegate skipButtonClick:sender];
+        [_delegate skipButtonClick:self];
     }
+    [self.window orderOut:nil];
+    [self close];
 }
 
 -(IBAction)laterButton_click:(id)sender{
     if ([_delegate respondsToSelector:@selector(laterButtonClick:)]) {
-        [_delegate laterButtonClick:sender];
+        [_delegate laterButtonClick:self];
     }
+    [self.window orderOut:nil];
+    [self close];
 }
 
 @end
