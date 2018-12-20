@@ -8,10 +8,12 @@
 
 #import "AppStoreUpdateManager.h"
 #import "AppStoreUpdateAppObject.h"
+#import "AppStoreUpdateWindowController.h"
 
 static AppStoreUpdateManager *instance;
 @implementation AppStoreUpdateManager{
     void (^_checkUpdateCompletionBlock)(BOOL rslt, AppStoreUpdateAppObject *AppObj);
+    void (^_requestAppUpdateWindowCompletionBlock)(AppUpdateWindowResult rslt, AppStoreUpdateAppObject *AppObj);
 }
 
 +(instancetype)sharedManager{
@@ -26,6 +28,7 @@ static AppStoreUpdateManager *instance;
 -(instancetype)init{
     if (self = [super init]) {
         _checkUpdateCompletionBlock = NULL;
+        _requestAppUpdateWindowCompletionBlock = NULL;
     }
     return self;
 }
@@ -68,6 +71,11 @@ static AppStoreUpdateManager *instance;
 }
 
 -(BOOL)requestAppUpdateWindow:(AppStoreUpdateAppObject *)appObj withCompletionCallback:(void (^)(AppUpdateWindowResult rslt, AppStoreUpdateAppObject *AppObj))block{
+    _requestAppUpdateWindowCompletionBlock = block;
+    static AppStoreUpdateWindowController *appStoreUpdateWindowCotroller = nil;
+    appStoreUpdateWindowCotroller = [[AppStoreUpdateWindowController alloc] initWithAppObject:appObj];
+    [appStoreUpdateWindowCotroller setDelegate:(id<AppStoreUpdateWindowControllerDelegate> _Nullable)self];
+    [appStoreUpdateWindowCotroller showWindow:nil];
     return YES;
 }
 
@@ -89,6 +97,25 @@ static AppStoreUpdateManager *instance;
         bRslt = YES;
     }
     return bRslt;
+}
+
+#pragma mark - delegate
+-(void)skipButtonClick:(AppStoreUpdateWindowController *)sender{
+    if(NULL != _requestAppUpdateWindowCompletionBlock){
+        _requestAppUpdateWindowCompletionBlock(AppUpdateWindowResultSkip, [sender appObj]);
+    }
+}
+
+-(void)updateButtonClick:(AppStoreUpdateWindowController *)sender{
+    if(NULL != _requestAppUpdateWindowCompletionBlock){
+        _requestAppUpdateWindowCompletionBlock(AppUpdateWindowResultUpdate, [sender appObj]);
+    }
+}
+
+-(void)laterButtonClick:(AppStoreUpdateWindowController *)sender{
+    if(NULL != _requestAppUpdateWindowCompletionBlock){
+        _requestAppUpdateWindowCompletionBlock(AppUpdateWindowResultLater, [sender appObj]);
+    }
 }
 
 @end
