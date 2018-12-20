@@ -10,10 +10,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol AppStoreUpdateWindowControllerDelegate <NSObject>
+
+@optional
+-(void)skipButtonClick:(id)sender;
+-(void)updateButtonClick:(id)sender;
+-(void)laterButtonClick:(id)sender;
+
+@end
+
 @class AppStoreUpdateAppObject;
 @interface AppStoreUpdateWindowController : NSWindowController
 
--(instancetype)initWithAppObject:(AppStoreUpdateAppObject *)AppObj;
+@property(nonatomic, strong, readonly)  NSButton                                        *btnSkip;
+@property(nonatomic, strong, readonly)  NSButton                                        *btnLater;
+@property(nonatomic, strong, readonly)  NSButton                                        *btnUpdate;
+@property(nonatomic, weak, readonly)    id<AppStoreUpdateWindowControllerDelegate>      delegate;
+
+-(instancetype)initWithAppObject:(AppStoreUpdateAppObject *)appObj;
 
 @end
 
