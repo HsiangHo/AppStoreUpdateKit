@@ -53,12 +53,12 @@
     [b1 setHidden:YES];
     [[NSWindow standardWindowButton:NSWindowZoomButton forStyleMask:window.styleMask] setHidden:YES];
     
-    _ivIcon = [[NSImageView alloc] initWithFrame:NSMakeRect((NSWidth(rctWindow) - 128) / 2, NSHeight(rctWindow) - 153, 128, 128)];
+    _ivIcon = [[NSImageView alloc] initWithFrame:NSMakeRect((NSWidth(rctWindow) - 96) / 2, NSHeight(rctWindow) - 140, 96, 96)];
     [_ivIcon setImageScaling:NSImageScaleAxesIndependently];
     [window.contentView addSubview:_ivIcon];
     [_ivIcon setImage:[_appObj appIcon]];
     
-    _lbName = [[NSTextField alloc] initWithFrame:NSMakeRect(0, NSMinY(_ivIcon.frame) - 25, NSWidth(rctWindow), 36)];
+    _lbName = [[NSTextField alloc] initWithFrame:NSMakeRect(0, NSMinY(_ivIcon.frame) - 40, NSWidth(rctWindow), 36)];
     [_lbName setEditable:NO];
     [_lbName setBezeled:NO];
     [_lbName setSelectable:NO];
