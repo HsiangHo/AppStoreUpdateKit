@@ -69,7 +69,7 @@
     [_lbName setStringValue:[_appObj appName]];
     [window.contentView addSubview:_lbName];
     
-    _lbVersion = [[NSTextField alloc] initWithFrame:NSMakeRect((NSWidth(rctWindow) - 150) / 2, NSMinY(_lbName.frame) - 30, 150, 20)];
+    _lbVersion = [[NSTextField alloc] initWithFrame:NSMakeRect((NSWidth(rctWindow) - 110) / 2, NSMinY(_lbName.frame) - 30, 110, 19)];
     [_lbVersion setWantsLayer:YES];
     _lbVersion.layer.backgroundColor = [NSColor colorWithCalibratedRed:238/255.0 green:238/255.0 blue:238/255.0 alpha:1.0].CGColor;
     _lbVersion.layer.cornerRadius = 10.0f;
@@ -80,7 +80,7 @@
     [_lbVersion setBackgroundColor:[NSColor clearColor]];
     [_lbVersion setFont:[NSFont fontWithName:@"Helvetica Neue" size:15]];
     [_lbVersion setAlignment:NSCenterTextAlignment];
-    [_lbVersion setStringValue:[NSString stringWithFormat:@"New Version %@",[_appObj latestVersion]]];
+    [_lbVersion setStringValue:[NSString stringWithFormat:@"Version %@",[_appObj latestVersion]]];
     [window.contentView addSubview:_lbVersion];
     
     _lbReleaseNotes = [[NSTextField alloc] initWithFrame:NSMakeRect((NSWidth(rctWindow) - 250) / 2,NSMinY(_lbName.frame) - 170, 250, 95)];
@@ -132,7 +132,7 @@
     NSArray *array = [releaseNote componentsSeparatedByString:@"\n"];
     NSString *rslt = @"Release Notes:\n\n";
     for (NSString *subItem in array) {
-        rslt = [rslt stringByAppendingString:[NSString stringWithFormat:@"  ⭐️%@\n",subItem]];
+        rslt = [rslt stringByAppendingString:[NSString stringWithFormat:@"  ⭐️ %@\n",subItem]];
     }
     return rslt;
 }
