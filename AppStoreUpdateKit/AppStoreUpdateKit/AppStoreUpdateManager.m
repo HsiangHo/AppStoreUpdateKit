@@ -75,7 +75,8 @@ static AppStoreUpdateManager *instance;
     static AppStoreUpdateWindowController *appStoreUpdateWindowCotroller = nil;
     appStoreUpdateWindowCotroller = [[AppStoreUpdateWindowController alloc] initWithAppObject:appObj];
     [appStoreUpdateWindowCotroller setDelegate:(id<AppStoreUpdateWindowControllerDelegate> _Nullable)self];
-    [appStoreUpdateWindowCotroller showWindow:nil];
+    [NSApp activateIgnoringOtherApps:YES];
+    [appStoreUpdateWindowCotroller.window makeKeyAndOrderFront:nil];
     return YES;
 }
 

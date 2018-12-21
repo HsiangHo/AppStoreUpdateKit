@@ -45,6 +45,7 @@
     [window setMovableByWindowBackground:YES];
     [window center];
     [window setBackgroundColor:[NSColor whiteColor]];
+    [window setAnimationBehavior:NSWindowAnimationBehaviorAlertPanel];
     
     ASUView *contentView = [[ASUView alloc] init];
     [window setContentView:contentView];
