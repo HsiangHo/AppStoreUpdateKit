@@ -45,13 +45,13 @@
     [window setMovableByWindowBackground:YES];
     [window center];
     [window setBackgroundColor:[NSColor whiteColor]];
+    [window setAnimationBehavior:NSWindowAnimationBehaviorAlertPanel];
     
     ASUView *contentView = [[ASUView alloc] init];
     [window setContentView:contentView];
     
-    NSButton *b1 = [NSWindow standardWindowButton:NSWindowMiniaturizeButton forStyleMask:window.styleMask];
-    [b1 setHidden:YES];
-    [[NSWindow standardWindowButton:NSWindowZoomButton forStyleMask:window.styleMask] setHidden:YES];
+    [[window standardWindowButton:NSWindowMiniaturizeButton] setHidden:YES];
+    [[window standardWindowButton:NSWindowZoomButton] setHidden:YES];
     
     _ivIcon = [[NSImageView alloc] initWithFrame:NSMakeRect((NSWidth(rctWindow) - 96) / 2, NSHeight(rctWindow) - 140, 96, 96)];
     [_ivIcon setImageScaling:NSImageScaleAxesIndependently];
