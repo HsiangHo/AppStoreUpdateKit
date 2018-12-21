@@ -14,5 +14,5 @@ To run the example project, clone the repo, build and run the target 'AppStoreUp
 macOS 10.10 and above
 Xcode 8.0+
 
-## Screenshots
-
+## Contributing
+Contributions are very welcome 🙌 🤓
