@@ -9,7 +9,7 @@ AppStoreUpdateKit是一个方便开发者从Mac App Store进行更新检查的�
 
 <img src="doc/screenshot1.png" width="480px">
 
-## 安装
+## 如何安装
 克隆仓库到本地，将AppStoreUpdateKit工程加入到你的项目。
   
 ## 功能
