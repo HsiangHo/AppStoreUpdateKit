@@ -3,6 +3,9 @@ AppStoreUpdateKit is a easy way for developers to check updates from Mac App Sto
 
 [![Travis](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/HsiangHo/AppStoreUpdateKit)
 [![Jenkins](https://img.shields.io/badge/license-GPL2-red.svg)](https://github.com/HsiangHo/AppStoreUpdateKit/blob/master/LICENSE)
+[![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/HsiangHo/AppStoreUpdateKit/issues)
+[![Platform](https://img.shields.io/badge/platform-macOS-yellow.svg)]()
+[![Language](https://img.shields.io/badge/Language-Objective--C-green.svg)]()
 
 <img src="doc/screenshot1.png" width="480px">
 
@@ -10,8 +13,8 @@ AppStoreUpdateKit is a easy way for developers to check updates from Mac App Sto
 
 To run the example project, clone the repo, build and run the target 'AppStoreUpdateKitDemo'.
 
-## How to use  
-- Check if new version is available
+## Getting started  
+- Check if the new version is available
 ```
 #import <AppStoreUpdateKit/AppStoreUpdateKit.h>
 
