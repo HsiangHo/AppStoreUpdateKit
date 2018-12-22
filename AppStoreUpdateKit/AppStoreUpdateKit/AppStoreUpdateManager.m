@@ -38,6 +38,9 @@ static AppStoreUpdateManager *instance;
     if (nil == [appObj productID]) {
         return bRslt;
     }
+    if ([appObj isNewVersionAvailable]) {
+        return YES;
+    }
     NSError *error;
     NSData *response = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/lookup?id=%@",[appObj productID]]]] returningResponse:nil error:nil];
     if (nil == response) {
@@ -93,6 +96,9 @@ static AppStoreUpdateManager *instance;
         return bRslt;
     }
     NSString *skippedVersion = [[NSUserDefaults standardUserDefaults] valueForKey:[appObj productID]];
+    if(nil == skippedVersion || [skippedVersion isEqualToString:@""]){
+        return bRslt;
+    }
     NSComparisonResult comparisonResult = [skippedVersion compare:[appObj latestVersion] options:NSNumericSearch];
     if (NSOrderedAscending != comparisonResult) {
         bRslt = YES;
