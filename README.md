@@ -6,6 +6,7 @@
 [![Language](https://img.shields.io/badge/Language-Objective--C-green.svg)]()  
   
 AppStoreUpdateKit is a easy way for developers to check updates from Mac App Store.  
+[中文版](https://github.com/HsiangHo/AppStoreUpdateKit/blob/master/README_zh.md)  
 
 <img src="doc/screenshot1.png" width="480px">
 
