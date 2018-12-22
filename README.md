@@ -1,13 +1,21 @@
 # AppStoreUpdateKit
-AppStoreUpdateKit is a easy way for developers to check updates from Mac App Store.  
-
 [![Travis](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/HsiangHo/AppStoreUpdateKit)
 [![Jenkins](https://img.shields.io/badge/license-GPL2-red.svg)](https://github.com/HsiangHo/AppStoreUpdateKit/blob/master/LICENSE)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/HsiangHo/AppStoreUpdateKit/issues)
 [![Platform](https://img.shields.io/badge/platform-macOS-yellow.svg)]()
-[![Language](https://img.shields.io/badge/Language-Objective--C-green.svg)]()
+[![Language](https://img.shields.io/badge/Language-Objective--C-green.svg)]()  
+  
+AppStoreUpdateKit is a easy way for developers to check updates from Mac App Store.  
 
 <img src="doc/screenshot1.png" width="480px">
+
+## Installation
+Clone the rep, build the AppStoreUpdateKit or copy all the source files into your project.
+  
+## Features
+- [x] Customization and Configuration to your needs
+- [x] Easy to check if the new version is available.
+- [x] Awesome UI to request users to update to the new version or skip the current new version.
 
 ## Example
 
