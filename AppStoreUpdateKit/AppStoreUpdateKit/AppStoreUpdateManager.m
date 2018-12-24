@@ -76,6 +76,10 @@ static AppStoreUpdateManager *instance;
 -(BOOL)requestAppUpdateWindow:(AppStoreUpdateAppObject *)appObj withCompletionCallback:(void (^)(AppUpdateWindowResult rslt, AppStoreUpdateAppObject *AppObj))block{
     _requestAppUpdateWindowCompletionBlock = block;
     static AppStoreUpdateWindowController *appStoreUpdateWindowCotroller = nil;
+    if (nil != appStoreUpdateWindowCotroller) {
+        [appStoreUpdateWindowCotroller setDelegate:nil];
+        [appStoreUpdateWindowCotroller close];
+    }
     appStoreUpdateWindowCotroller = [[AppStoreUpdateWindowController alloc] initWithAppObject:appObj];
     [appStoreUpdateWindowCotroller setDelegate:(id<AppStoreUpdateWindowControllerDelegate> _Nullable)self];
     [NSApp activateIgnoringOtherApps:YES];
