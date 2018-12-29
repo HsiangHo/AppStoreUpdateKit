@@ -50,6 +50,22 @@ AppStoreUpdateKit是一个方便开发者从Mac App Store进行更新检查的�
 
 ```
 
+- 定制更新提示窗口
+
+```
+    //创建一个配置UI对象并且设定对应的值
+AppStoreUpdateUIConfigure *UIConfigure = [[AppStoreUpdateUIConfigure alloc] init];
+    [UIConfigure setSkipButtonTitle:@"跳过"];
+    [UIConfigure setUpdateButtonTitle:@"更新"];
+    [UIConfigure setLaterButtonTitle:@"稍后"];
+    [UIConfigure setVersionText:@"版本 %@"];
+    [UIConfigure setReleaseNotesText:@"更新说明:\n\n"];
+    [UIConfigure setReleaseNotesNoneText:@"更新说明:\n\n 无"];
+    
+    //将UI配置对象传递给AppStoreUpdateManager
+    [[AppStoreUpdateManager sharedManager] customize:UIConfigure];
+```
+
 - 跳过当前版本
 ```
 ...
