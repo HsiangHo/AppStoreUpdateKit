@@ -51,6 +51,22 @@ To run the example project, clone the repo, build and run the target 'AppStoreUp
 
 ```
 
+- Customize update window
+
+```
+    //Create a AppStoreUpdateUIConfigure object and set configure's value.
+AppStoreUpdateUIConfigure *UIConfigure = [[AppStoreUpdateUIConfigure alloc] init];
+    [UIConfigure setSkipButtonTitle:@"Skip"];
+    [UIConfigure setUpdateButtonTitle:@"Update"];
+    [UIConfigure setLaterButtonTitle:@"Later"];
+    [UIConfigure setVersionText:@"Version %@"];
+    [UIConfigure setReleaseNotesText:@"Release Notes:\n\n"];
+    [UIConfigure setReleaseNotesNoneText:@"Release Notes:\n\n None."];
+    
+    //set configure object to AppStoreUpdateManager
+    [[AppStoreUpdateManager sharedManager] customize:UIConfigure];
+```
+
 - Skip the current new version
 ```
 ...
