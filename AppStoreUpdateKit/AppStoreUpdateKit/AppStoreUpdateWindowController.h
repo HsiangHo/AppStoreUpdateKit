@@ -8,8 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
+@class AppStoreUpdateUIConfigure;
 @class AppStoreUpdateAppObject;
 @class AppStoreUpdateWindowController;
 
@@ -24,14 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AppStoreUpdateWindowController : NSWindowController
 
-@property(nonatomic, strong, readonly)  NSButton                                        *btnSkip;
-@property(nonatomic, strong, readonly)  NSButton                                        *btnLater;
-@property(nonatomic, strong, readonly)  NSButton                                        *btnUpdate;
 @property(nonatomic, weak, readwrite)   id<AppStoreUpdateWindowControllerDelegate>      delegate;
 @property(nonatomic, strong, readonly)  AppStoreUpdateAppObject                         *appObj;
 
--(instancetype)initWithAppObject:(AppStoreUpdateAppObject *)appObj;
+-(instancetype)initWithAppObject:(AppStoreUpdateAppObject *)appObj withCustomizeConfigure:(AppStoreUpdateUIConfigure *)configure;
 
 @end
-
-NS_ASSUME_NONNULL_END

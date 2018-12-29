@@ -12,6 +12,8 @@
 		984AC0B321CB87700082B0BE /* ASUButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AC0B121CB87700082B0BE /* ASUButton.m */; };
 		984AC0B921CBCFCA0082B0BE /* ASUView.h in Headers */ = {isa = PBXBuildFile; fileRef = 984AC0B721CBCFCA0082B0BE /* ASUView.h */; };
 		984AC0BA21CBCFCA0082B0BE /* ASUView.m in Sources */ = {isa = PBXBuildFile; fileRef = 984AC0B821CBCFCA0082B0BE /* ASUView.m */; };
+		9850ED6D21D7893500F12CBB /* AppStoreUpdateUIConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 9850ED6B21D7893500F12CBB /* AppStoreUpdateUIConfigure.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9850ED6E21D7893500F12CBB /* AppStoreUpdateUIConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 9850ED6C21D7893500F12CBB /* AppStoreUpdateUIConfigure.m */; };
 		98DF3DAB21C9FD3C008515B7 /* AppStoreUpdateKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DF3DA921C9FD3C008515B7 /* AppStoreUpdateKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98DF3DB321C9FEFB008515B7 /* AppStoreUpdateWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 98DF3DB121C9FEFB008515B7 /* AppStoreUpdateWindowController.h */; };
 		98DF3DB421C9FEFB008515B7 /* AppStoreUpdateWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DF3DB221C9FEFB008515B7 /* AppStoreUpdateWindowController.m */; };
@@ -30,6 +32,8 @@
 		984AC0B121CB87700082B0BE /* ASUButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASUButton.m; sourceTree = "<group>"; };
 		984AC0B721CBCFCA0082B0BE /* ASUView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASUView.h; sourceTree = "<group>"; };
 		984AC0B821CBCFCA0082B0BE /* ASUView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASUView.m; sourceTree = "<group>"; };
+		9850ED6B21D7893500F12CBB /* AppStoreUpdateUIConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppStoreUpdateUIConfigure.h; sourceTree = "<group>"; };
+		9850ED6C21D7893500F12CBB /* AppStoreUpdateUIConfigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppStoreUpdateUIConfigure.m; sourceTree = "<group>"; };
 		98DF3DA621C9FD3C008515B7 /* AppStoreUpdateKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppStoreUpdateKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98DF3DA921C9FD3C008515B7 /* AppStoreUpdateKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppStoreUpdateKit.h; sourceTree = "<group>"; };
 		98DF3DAA21C9FD3C008515B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 			children = (
 				984AC0AE21CB86540082B0BE /* Custom */,
 				98DF3DA921C9FD3C008515B7 /* AppStoreUpdateKit.h */,
+				9850ED6B21D7893500F12CBB /* AppStoreUpdateUIConfigure.h */,
+				9850ED6C21D7893500F12CBB /* AppStoreUpdateUIConfigure.m */,
 				98DF3DD221CA0D3B008515B7 /* AppStoreUpdateAppObject.h */,
 				98DF3DD321CA0D3C008515B7 /* AppStoreUpdateAppObject.m */,
 				98DF3DCE21CA0108008515B7 /* AppStoreUpdateManager.h */,
@@ -142,6 +148,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9850ED6D21D7893500F12CBB /* AppStoreUpdateUIConfigure.h in Headers */,
 				98DF3DD421CA0D3C008515B7 /* AppStoreUpdateAppObject.h in Headers */,
 				984AC0B221CB87700082B0BE /* ASUButton.h in Headers */,
 				98DF3DD021CA0108008515B7 /* AppStoreUpdateManager.h in Headers */,
@@ -261,6 +268,7 @@
 				984AC0BA21CBCFCA0082B0BE /* ASUView.m in Sources */,
 				98DF3DD121CA0108008515B7 /* AppStoreUpdateManager.m in Sources */,
 				984AC0B321CB87700082B0BE /* ASUButton.m in Sources */,
+				9850ED6E21D7893500F12CBB /* AppStoreUpdateUIConfigure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

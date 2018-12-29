@@ -16,11 +16,13 @@ typedef enum : NSUInteger {
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AppStoreUpdateUIConfigure;
 @class AppStoreUpdateAppObject;
 @interface AppStoreUpdateManager : NSObject
 
 +(instancetype)sharedManager;
 
+-(void)customize:(AppStoreUpdateUIConfigure *)configure;
 /*
  These functions will request app information from app store. Return value YES: New version is available.
  */

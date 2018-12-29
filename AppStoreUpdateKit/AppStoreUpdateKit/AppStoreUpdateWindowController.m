@@ -10,6 +10,7 @@
 #import "AppStoreUpdateAppObject.h"
 #import "ASUButton.h"
 #import "ASUView.h"
+#import "AppStoreUpdateUIConfigure.h"
 
 @interface AppStoreUpdateWindowController ()
 
@@ -25,17 +26,19 @@
     ASUButton                                              *_btnLater;
     ASUButton                                              *_btnUpdate;
     __weak id<AppStoreUpdateWindowControllerDelegate>      _delegate;
+    NSString                                               *_releaseNotesNoneText;
+    NSString                                               *_releaseNotesText;
 }
 
--(instancetype)initWithAppObject:(AppStoreUpdateAppObject *)appObj{
+-(instancetype)initWithAppObject:(AppStoreUpdateAppObject *)appObj withCustomizeConfigure:(AppStoreUpdateUIConfigure *)configure{
     if (self = [super init]) {
         _appObj = appObj;
-        [self __initializeAppStoreUpdateWindowController];
+        [self __initializeAppStoreUpdateWindowController: configure];
     }
     return self;
 }
 
--(void)__initializeAppStoreUpdateWindowController{
+-(void)__initializeAppStoreUpdateWindowController:(AppStoreUpdateUIConfigure *)configure {
     NSRect rctWindow = NSMakeRect(0, 0, 320, 485);
     NSWindow *window = [[NSWindow alloc] initWithContentRect:rctWindow styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskFullSizeContentView | NSClosableWindowMask backing:NSBackingStoreBuffered defer:YES];
     [self setWindow:window];
@@ -81,8 +84,13 @@
     [_lbVersion setFont:[NSFont fontWithName:@"Helvetica Neue" size:15]];
     [_lbVersion setAlignment:NSCenterTextAlignment];
     [_lbVersion setStringValue:[NSString stringWithFormat:@"Version %@",[_appObj latestVersion]]];
+    if (nil != [configure versionText]) {
+        [_lbVersion setStringValue:[NSString stringWithFormat:[configure versionText], [_appObj latestVersion]]];
+    }
     [window.contentView addSubview:_lbVersion];
     
+    _releaseNotesNoneText = [configure releaseNotesNoneText];
+    _releaseNotesText = [configure releaseNotesText];
     _lbReleaseNotes = [[NSTextField alloc] initWithFrame:NSMakeRect((NSWidth(rctWindow) - 250) / 2,NSMinY(_lbName.frame) - 170, 250, 95)];
     [_lbReleaseNotes setEditable:NO];
     [_lbReleaseNotes setBezeled:NO];
@@ -99,6 +107,9 @@
     [_btnUpdate setTitleColor:[NSColor whiteColor]];
     [_btnUpdate setFont:[NSFont fontWithName:@"Helvetica Neue Medium" size:22]];
     [_btnUpdate setTitle:@"Update"];
+    if (nil != [configure updateButtonTitle]) {
+        [_btnUpdate setTitle:[configure updateButtonTitle]];
+    }
     [_btnUpdate setAlignment:NSCenterTextAlignment];
     [_btnUpdate setTarget:self];
     [_btnUpdate setAction:@selector(updateButton_click:)];
@@ -109,6 +120,9 @@
     [_btnSkip setTitleColor:[NSColor lightGrayColor]];
     [_btnSkip setFont:[NSFont fontWithName:@"HelveticaNeue" size:14]];
     [_btnSkip setTitle:@"Skip this version"];
+    if (nil != [configure skipButtonTitle]) {
+        [_btnSkip setTitle:[configure skipButtonTitle]];
+    }
     [_btnSkip setTarget:self];
     [_btnSkip setAction:@selector(skipButton_click:)];
     [_btnSkip setAlignment:NSLeftTextAlignment];
@@ -119,6 +133,9 @@
     [_btnLater setTitleColor:[NSColor lightGrayColor]];
     [_btnLater setFont:[NSFont fontWithName:@"HelveticaNeue" size:14]];
     [_btnLater setTitle:@"Later"];
+    if (nil != [configure laterButtonTitle]) {
+        [_btnLater setTitle:[configure laterButtonTitle]];
+    }
     [_btnLater setTarget:self];
     [_btnLater setAction:@selector(laterButton_click:)];
     [_btnLater setAlignment:NSRightTextAlignment];
@@ -127,10 +144,16 @@
 
 -(NSString *)__formatedReleaseNotes:(NSString *)releaseNote{
     if (nil == releaseNote || [releaseNote isEqualToString:@""]) {
+        if (nil != _releaseNotesNoneText) {
+            return _releaseNotesNoneText;
+        }
         return @"Release Notes:\n\n None.";
     }
     NSArray *array = [releaseNote componentsSeparatedByString:@"\n"];
     NSString *rslt = @"Release Notes:\n\n";
+    if (nil != _releaseNotesText) {
+        rslt = _releaseNotesText;
+    }
     for (NSString *subItem in array) {
         rslt = [rslt stringByAppendingString:[NSString stringWithFormat:@"  ⭐️ %@\n",subItem]];
     }
