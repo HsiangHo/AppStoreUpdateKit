@@ -22,6 +22,14 @@
                                                                            withAppIcon:[NSImage imageNamed:@"cat"]
                                                                     withCurrentVersion:@"1.0.9"
                                                                          withProductID:@"1434172933"];
+    AppStoreUpdateUIConfigure *UIConfigure = [[AppStoreUpdateUIConfigure alloc] init];
+    [UIConfigure setSkipButtonTitle:@"跳过"];
+    [UIConfigure setUpdateButtonTitle:@"更新"];
+    [UIConfigure setLaterButtonTitle:@"稍后"];
+    [UIConfigure setVersionText:@"版本 %@"];
+    [UIConfigure setReleaseNotesText:@"更新说明:\n\n"];
+    [UIConfigure setReleaseNotesNoneText:@"更新说明:\n\n 无"];
+    [[AppStoreUpdateManager sharedManager] customize:UIConfigure];
     
     BOOL bRslt = [[AppStoreUpdateManager sharedManager] checkAppUpdate:appObj];
     bRslt = [appObj isNewVersionAvailable];
