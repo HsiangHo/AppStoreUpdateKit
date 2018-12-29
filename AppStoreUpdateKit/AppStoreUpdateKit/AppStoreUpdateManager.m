@@ -14,6 +14,7 @@ static AppStoreUpdateManager *instance;
 @implementation AppStoreUpdateManager{
     void (^_checkUpdateCompletionBlock)(BOOL rslt, AppStoreUpdateAppObject *AppObj);
     void (^_requestAppUpdateWindowCompletionBlock)(AppUpdateWindowResult rslt, AppStoreUpdateAppObject *AppObj);
+    AppStoreUpdateUIConfigure       *_configure;
 }
 
 +(instancetype)sharedManager{
@@ -23,6 +24,10 @@ static AppStoreUpdateManager *instance;
         }
         return instance;
     }
+}
+
+-(void)customize:(AppStoreUpdateUIConfigure *)configure{
+    _configure = configure;
 }
 
 -(instancetype)init{
@@ -80,7 +85,7 @@ static AppStoreUpdateManager *instance;
         [appStoreUpdateWindowCotroller setDelegate:nil];
         [appStoreUpdateWindowCotroller close];
     }
-    appStoreUpdateWindowCotroller = [[AppStoreUpdateWindowController alloc] initWithAppObject:appObj];
+    appStoreUpdateWindowCotroller = [[AppStoreUpdateWindowController alloc] initWithAppObject:appObj withCustomizeConfigure:_configure];
     [appStoreUpdateWindowCotroller setDelegate:(id<AppStoreUpdateWindowControllerDelegate> _Nullable)self];
     [NSApp activateIgnoringOtherApps:YES];
     [appStoreUpdateWindowCotroller.window makeKeyAndOrderFront:nil];

@@ -10,6 +10,7 @@
 
 #import <AppStoreUpdateKit/AppStoreUpdateManager.h>
 #import <AppStoreUpdateKit/AppStoreUpdateAppObject.h>
+#import <AppStoreUpdateKit/AppStoreUpdateUIConfigure.h>
 //! Project version number for AppStoreUpdateKit.
 FOUNDATION_EXPORT double AppStoreUpdateKitVersionNumber;
 
