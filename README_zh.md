@@ -5,7 +5,8 @@
 [![Platform](https://img.shields.io/badge/platform-macOS-yellow.svg)]()
 [![Language](https://img.shields.io/badge/Language-Objective--C-green.svg)]()  
   
-AppStoreUpdateKit是一个方便开发者从Mac App Store进行更新检查的组件。
+AppStoreUpdateKit是一个方便开发者从Mac App Store进行更新检查的组件。  
+[查看非Mac App Store适用的Kit](https://github.com/HsiangHo/AppStoreUpdateKit)  
 
 <img src="doc/screenshot1.png" width="480px">
 
